@@ -36,21 +36,19 @@ knn.fit(xtrain,ytrain)
 st.title("Campus Placement Predicter")
 
 #Take user input into different variables
-ip_Age=st.number_input("Enter Age : ")
+ip_Age=int(st.number_input("Enter Age : "))
 ip_Gender=st.selectbox("Select Gender : ",["Male","Female"])
 
 ip_options_streams=["Civil","Computer Science","Electrical","Electronics And Communication","Information Technology","Mechanical"]
 
 ip_Stream=st.selectbox("Select Stream : ",ip_options_streams)
-ip_Internships=int(st.number_input("Enter CGPA :"))
-ip_CGPA=st.number_input("Enter Number of Internships Completed : ")
+ip_Internships=int(st.number_input("Enter Number of Internships Completed : "))
+ip_CGPA=int(st.number_input("Enter CGPA :"))
 ip_Hostel=st.selectbox("Hosteler ?",["Yes","No"])
 ip_HOB=st.selectbox("Had History of Backlog ?",["Yes","No"])
 
 
 #Convert input values to a form that our model can understand
-ip_Age=int(ip_Age)
-
 if ip_Gender=="Male":
 	ip_Gender=1
 else:
@@ -79,10 +77,6 @@ if ip_HOB=="Yes":
 	ip_HOB=1
 else:
 	ip_HOB=0
-
-
-ip_Internships=int(ip_Internships)
-
 
 
 #Put inputs in an array
